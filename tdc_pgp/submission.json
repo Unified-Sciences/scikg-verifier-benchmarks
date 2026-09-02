@@ -1,0 +1,24 @@
+{
+  "benchmark_group": "ADMET_Group",
+  "benchmark": "Pgp_Broccatelli",
+  "metric": "AUROC",
+  "model_name": "Scientia KG Verifier",
+  "mean": 0.9432418021860837,
+  "sample_standard_deviation": 0.0018795697020609046,
+  "seeds": [1, 2, 3, 4, 5],
+  "per_seed_values": [
+    0.9417488669688083,
+    0.9427486003732338,
+    0.9450813116502267,
+    0.9412823247134097,
+    0.9453479072247399
+  ],
+  "test_contract": "official TDC held-out test evaluated through admet_group.evaluate_many",
+  "input_contract": "temporally filtered external evidence assisted",
+  "evidence_protocol": "The verifier uses a pre-cutoff scientific knowledge graph. Test labels, post-cutoff evidence, and benchmark-derived target values are excluded.",
+  "source_result_sha256": "a94fc3d201351135ee945d9b1c533357a2110d9cfc5f96c08492b24b3cd80b22",
+  "predictions_sha256": "0caa286f8c7478f5e5acb5464481aac226b0e20dec402176bc63eca95cfcb6a9",
+  "reproduction_receipt_sha256": "fd01b9956127e0e3f6cd3895aa63a24a88559ef75d2e08916b35c2179153d275",
+  "submission_form": "https://forms.gle/HYupGaV7WDuutbr9A",
+  "formally_submitted": false
+}

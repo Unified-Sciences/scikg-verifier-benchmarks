@@ -1,0 +1,15 @@
+{
+  "authors": "Gaurav Sahu",
+  "algorithm": "SciKG Verify",
+  "algorithm_long": "A temporally filtered scientific-knowledge-graph verifier applied to frozen MODNet v0.1.12 MatBench dielectric predictions. The method retrieves compatible pre-cutoff external measurements and relations, applies strict structure/property/source compatibility checks, and uses nested out-of-fold selection to decide whether and how strongly to correct each prediction.",
+  "bibtex_refs": "",
+  "notes": "Mean official-fold MAE is 0.24932956785914703. All scientific evidence predates the benchmark cutoff, and each outer fold is excluded from selector fitting and parameter selection.",
+  "requirements": {
+    "python": [
+      "matbench==0.6",
+      "numpy",
+      "pandas",
+      "scikit-learn"
+    ]
+  }
+}

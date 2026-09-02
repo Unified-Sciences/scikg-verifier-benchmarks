@@ -1,0 +1,44 @@
+{
+  "benchmark": "Pgp_Broccatelli",
+  "checks": {
+    "metric_recomputation": "passed",
+    "prediction_exactness": "passed",
+    "row_count": "passed",
+    "row_order_and_identity": "passed"
+  },
+  "mean": 0.9432418021860837,
+  "metric": "AUROC",
+  "official_test_labels_sha256": "7177388806caeae6e30daaf7cfccf5e618be3b408c9f89021fd1b6efc92a5456",
+  "predictions_sha256": "0caa286f8c7478f5e5acb5464481aac226b0e20dec402176bc63eca95cfcb6a9",
+  "reproduce_metrics_sha256": "d4dba7a1072a73186786f5d488bb90b4d33e086d36b59f9f879075193556cca8",
+  "sample_standard_deviation": 0.0018795697020608797,
+  "schema": "tdc_prediction_reproduction_receipt_v1",
+  "seed_results": [
+    {
+      "roc_auc": 0.9417488669688083,
+      "rows": 245,
+      "seed": 1
+    },
+    {
+      "roc_auc": 0.9427486003732338,
+      "rows": 245,
+      "seed": 2
+    },
+    {
+      "roc_auc": 0.9450813116502266,
+      "rows": 245,
+      "seed": 3
+    },
+    {
+      "roc_auc": 0.9412823247134098,
+      "rows": 245,
+      "seed": 4
+    },
+    {
+      "roc_auc": 0.94534790722474,
+      "rows": 245,
+      "seed": 5
+    }
+  ],
+  "state": "verified"
+}
