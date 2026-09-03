@@ -22,7 +22,9 @@ uses only the Python standard library and does not depend on a working PyTDC
 installation or network service.
 
 `tdc_pgp/submission_client.py` can also request the frozen predictions from the
-versioned verifier endpoint.
+versioned verifier endpoint. It defaults to `https://unified-sciences.com` and
+does not require a credential because these submitted predictions are already
+public. Set `SCIENTIA_VERIFIER_API_URL` only to test another compatible host.
 
 See [METHOD.md](METHOD.md) for the method and evaluation protocol.
 
@@ -39,7 +41,8 @@ MatBench recording for the five official `matbench_dielectric` folds:
 
 The native `results.json.gz` contains all 4,764 held-out predictions and is
 accepted by MatBench's official submission validator. The accompanying client
-requests the same version-pinned verifier output. The complete evaluation
+requests the same version-pinned verifier output from the public serverless
+endpoint. The complete evaluation
 protocol is recorded in `info.json` and [METHOD.md](METHOD.md).
 
 The corresponding upstream submission is
