@@ -4,6 +4,10 @@ This repository reproduces the benchmark results reported for SciKG Verify.
 Each result includes the submitted predictions, immutable hashes, benchmark
 metadata, and a small script that recomputes the score from end to end.
 
+Run `python verify_release.py` from the repository root to verify both immutable
+artifacts and reproduce the published scores. The same command runs in CI on
+every push and pull request.
+
 ## TDC P-glycoprotein
 
 The `tdc_pgp` folder records the five official TDC seeds for
