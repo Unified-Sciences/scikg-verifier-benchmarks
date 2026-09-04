@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "bytes": 362,
+      "path": "README.md",
+      "sha256": "1da55086c581ab6b9621e67cc2082ef69de91194f7ee5cdd586da056f45d9fed"
+    },
+    {
+      "bytes": 2342,
+      "path": "REPRODUCTION_RECEIPT.json",
+      "sha256": "e342eaec9984e1f06f46ff8b38f224a9a41f562b98b99d66579ad3c1d31213b5"
+    },
+    {
+      "bytes": 262,
+      "path": "SUBMISSION_READINESS.json",
+      "sha256": "61013c305f7e04f8c0916afd70ee4e7538f8c3140af11a3143cc99b4725e4c72"
+    },
+    {
+      "bytes": 850305,
+      "path": "predictions.json.gz",
+      "sha256": "42e79893cb922630aec17dbe07ee15f267375903f2fab392a1eaf1d0191c03f3"
+    },
+    {
+      "bytes": 2527,
+      "path": "reproduce_metrics.py",
+      "sha256": "1d1ddc529cd1e48591492ac493df4f9817459a92396a19193daac4e67e3addba"
+    }
+  ],
+  "tree_sha256": "62173a7e1eabb6fcfc48fde8c71ced6b7653604d1492cfbdf0b98a140a4574c3"
+}

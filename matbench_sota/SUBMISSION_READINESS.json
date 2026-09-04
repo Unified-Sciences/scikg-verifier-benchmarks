@@ -1,0 +1,11 @@
+{
+  "core_ip_distribution_allowed": false,
+  "endpoints": [
+    "matbench_glass",
+    "matbench_log_gvrh",
+    "matbench_log_kvrh",
+    "matbench_perovskites"
+  ],
+  "metric_reproduction": "python reproduce_metrics.py",
+  "state": "prediction_bundle_complete"
+}

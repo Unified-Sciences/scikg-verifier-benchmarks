@@ -57,7 +57,19 @@ def verify_additional_biology() -> None:
     print(completed.stdout.strip())
 
 
+def verify_additional_materials() -> None:
+    completed = subprocess.run(
+        [sys.executable, str(ROOT / "matbench_sota/reproduce_metrics.py")],
+        cwd=ROOT / "matbench_sota",
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    print(completed.stdout.strip())
+
+
 if __name__ == "__main__":
     verify_materials()
     verify_biology()
     verify_additional_biology()
+    verify_additional_materials()

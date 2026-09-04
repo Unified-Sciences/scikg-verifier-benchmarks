@@ -65,5 +65,21 @@ requests the same version-pinned verifier output from the public serverless
 endpoint. The complete evaluation
 protocol is recorded in `info.json` and [METHOD.md](METHOD.md).
 
+## Additional MatBench headline results
+
+The `matbench_sota` bundle contains final held-out predictions and labels for
+four additional five-fold evaluations:
+
+- Log bulk modulus: **0.0476983337 MAE**
+- Log shear modulus: **0.0647780857 MAE**
+- Perovskites: **0.0268923162 MAE**
+- Glass formation: **0.9632361970 balanced accuracy**
+
+Run `python matbench_sota/reproduce_metrics.py` to validate the immutable
+prediction archive and recompute all 20 fold-level scores and four reported
+means using only the Python standard library. The bundle exposes final outputs
+and benchmark labels without distributing the private evidence graph or
+verifier implementation.
+
 The corresponding upstream submission is
 [materialsproject/matbench#366](https://github.com/materialsproject/matbench/pull/366).

@@ -1,0 +1,86 @@
+{
+  "endpoints": {
+    "matbench_glass": {
+      "fold_values": [
+        0.9737083950087193,
+        0.9623921386952313,
+        0.959013645796846,
+        0.9562547315849539,
+        0.9648120736865496
+      ],
+      "mean": 0.96323619695446,
+      "metric": "balanced_accuracy",
+      "rows_per_fold": [
+        1136,
+        1136,
+        1136,
+        1136,
+        1136
+      ]
+    },
+    "matbench_log_gvrh": {
+      "fold_values": [
+        0.06418953672905091,
+        0.06507724821472922,
+        0.0639840826237473,
+        0.0650699790532065,
+        0.06556958185357896
+      ],
+      "mean": 0.06477808569486258,
+      "metric": "mae",
+      "rows_per_fold": [
+        2198,
+        2198,
+        2197,
+        2197,
+        2197
+      ]
+    },
+    "matbench_log_kvrh": {
+      "fold_values": [
+        0.046881240617423235,
+        0.04903135514409846,
+        0.04328084231703006,
+        0.05231071859225535,
+        0.046987511586033585
+      ],
+      "mean": 0.047698333651368136,
+      "metric": "mae",
+      "rows_per_fold": [
+        2198,
+        2198,
+        2197,
+        2197,
+        2197
+      ]
+    },
+    "matbench_perovskites": {
+      "fold_values": [
+        0.027298728992017792,
+        0.02801060381336471,
+        0.02557329595241432,
+        0.027007809094817734,
+        0.026571143102226025
+      ],
+      "mean": 0.026892316190968116,
+      "metric": "mae",
+      "rows_per_fold": [
+        3786,
+        3786,
+        3786,
+        3785,
+        3785
+      ]
+    }
+  },
+  "predictions_file": "predictions.json.gz",
+  "predictions_sha256": "42e79893cb922630aec17dbe07ee15f267375903f2fab392a1eaf1d0191c03f3",
+  "private_ip_included": false,
+  "schema": "scientia_matbench_sota_reproduction_receipt_v1",
+  "source_result_sha256": {
+    "results/matbench_classification_board_metric_v2/matbench_glass.json": "f84b2915e6d0c32d561b7a2e8064f5691455ce6bdb9bf0434801723a75c475c5",
+    "results/matbench_moduli_strongest_base_v1/matbench_log_gvrh.json": "1abd740bdfa13dc71d31bb79d8dd5e7efc6cb715778a2dfb7e3adc42399d09bb",
+    "results/matbench_moduli_strongest_base_v1/matbench_log_kvrh.json": "628484931b5828e63cd0da82bfc4fe371b20489c930cda9f1fc391121b8aaa51",
+    "results/matbench_strongest_base_all13_v1/matbench_perovskites.json": "f56850552a33618978d1a8e86b901f3749a7d42f59c728bf5c85ba444f2caacf"
+  }
+}
