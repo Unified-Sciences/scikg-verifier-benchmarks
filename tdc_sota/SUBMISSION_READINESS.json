@@ -1,0 +1,11 @@
+{
+  "core_ip_distribution_allowed": false,
+  "endpoints": [
+    "ames",
+    "half_life_obach",
+    "hia_hou",
+    "solubility_aqsoldb"
+  ],
+  "metric_reproduction": "python reproduce_metrics.py",
+  "state": "prediction_bundle_complete"
+}

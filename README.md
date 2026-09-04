@@ -4,9 +4,25 @@ This repository reproduces the benchmark results reported for SciKG Verify.
 Each result includes the submitted predictions, immutable hashes, benchmark
 metadata, and a small script that recomputes the score from end to end.
 
-Run `python verify_release.py` from the repository root to verify both immutable
+Run `python verify_release.py` from the repository root to verify the immutable
 artifacts and reproduce the published scores. The same command runs in CI on
 every push and pull request.
+
+## Additional TDC headline results
+
+The `tdc_sota` bundle contains final held-out predictions and labels for four
+additional five-seed ADMET evaluations:
+
+- Ames mutagenicity: **0.8735406998 ROC-AUC**
+- Drug half-life: **0.5860994384 Spearman correlation**
+- Human intestinal absorption: **0.9950205761 ROC-AUC**
+- AqSolDB solubility: **0.7126511346 MAE**
+
+Run `python tdc_sota/reproduce_metrics.py` to validate the immutable prediction
+archive, preserve every held-out row identity and order, and recompute all 20
+seed-level scores and the four reported means using only the Python standard
+library. The bundle contains final outputs and benchmark labels; it does not
+contain the private evidence graph or verifier implementation.
 
 ## TDC P-glycoprotein
 

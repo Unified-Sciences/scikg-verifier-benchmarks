@@ -46,7 +46,18 @@ def verify_biology() -> None:
     print(completed.stdout.strip())
 
 
+def verify_additional_biology() -> None:
+    completed = subprocess.run(
+        [sys.executable, str(ROOT / "tdc_sota/reproduce_metrics.py")],
+        cwd=ROOT / "tdc_sota",
+        check=True,
+        text=True,
+        capture_output=True,
+    )
+    print(completed.stdout.strip())
+
+
 if __name__ == "__main__":
     verify_materials()
     verify_biology()
-
+    verify_additional_biology()

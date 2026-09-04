@@ -1,0 +1,90 @@
+{
+  "endpoints": {
+    "ames": {
+      "mean": 0.8735406998374747,
+      "metric": "roc-auc",
+      "rows_per_seed": [
+        1457,
+        1457,
+        1457,
+        1457,
+        1457
+      ],
+      "sample_standard_deviation": 0.007017935405398704,
+      "seed_values": [
+        0.877551939532789,
+        0.8744727721318216,
+        0.8613131253793888,
+        0.8757680784820536,
+        0.878597583661321
+      ]
+    },
+    "half_life_obach": {
+      "mean": 0.5860994383852979,
+      "metric": "spearman",
+      "rows_per_seed": [
+        135,
+        135,
+        135,
+        135,
+        135
+      ],
+      "sample_standard_deviation": 0.028549470908970597,
+      "seed_values": [
+        0.5882492863003896,
+        0.5874796056697836,
+        0.6275107412306953,
+        0.579892318519071,
+        0.54736524020655
+      ]
+    },
+    "hia_hou": {
+      "mean": 0.9950205761316873,
+      "metric": "roc-auc",
+      "rows_per_seed": [
+        117,
+        117,
+        117,
+        117,
+        117
+      ],
+      "sample_standard_deviation": 0.0007186933825750317,
+      "seed_values": [
+        0.995679012345679,
+        0.994238683127572,
+        0.994238683127572,
+        0.9954732510288066,
+        0.9954732510288067
+      ]
+    },
+    "solubility_aqsoldb": {
+      "mean": 0.7126511346443667,
+      "metric": "mae",
+      "rows_per_seed": [
+        1997,
+        1997,
+        1997,
+        1997,
+        1997
+      ],
+      "sample_standard_deviation": 0.005337566231785735,
+      "seed_values": [
+        0.7097428298498103,
+        0.7114643709540197,
+        0.7059249379052975,
+        0.7176743429517519,
+        0.7184491915609538
+      ]
+    }
+  },
+  "predictions_file": "predictions.json.gz",
+  "predictions_sha256": "4cfbf71863150451d5a82778827d509e8f6fde2a659227a99bece3f0838d01da",
+  "private_ip_included": false,
+  "schema": "scientia_tdc_sota_reproduction_receipt_v1",
+  "source_result_sha256": {
+    "results/tdc_strong_base_kg_overlays_v1/ames.json": "229abc7111b2003b7ac48d3e343b1e1736315c7655bdcb1896fb056720d9ff46",
+    "results/tdc_strong_base_kg_overlays_v1/half_life_obach.json": "49781e81f2cf7228b22641baf3954de5d12551afc3b025c197e17704b110edb1",
+    "results/tdc_strong_base_kg_overlays_v1/hia_hou.json": "038cfacd7e3a04e24442ad9691b41ef0355562b035878aba2db7bed181cd0c11",
+    "results/tdc_strong_base_kg_overlays_v1/solubility_aqsoldb.json": "cdd7c303763b36c1855233210659e04391c9bb6d2cf9477baa5ddca412a69e6d"
+  }
+}
