@@ -54,6 +54,42 @@
         2197
       ]
     },
+    "matbench_mp_e_form": {
+      "fold_values": [
+        0.01723194239907533,
+        0.01660502409670267,
+        0.016732076761671096,
+        0.01715736230907357,
+        0.016722839809883528
+      ],
+      "mean": 0.016889849075281238,
+      "metric": "mae",
+      "rows_per_fold": [
+        26551,
+        26551,
+        26550,
+        26550,
+        26550
+      ]
+    },
+    "matbench_mp_gap": {
+      "fold_values": [
+        0.1528219926641789,
+        0.15619523828956036,
+        0.15677807984645029,
+        0.15402531695044694,
+        0.15773436237015478
+      ],
+      "mean": 0.15551099802415824,
+      "metric": "mae",
+      "rows_per_fold": [
+        21223,
+        21223,
+        21223,
+        21222,
+        21222
+      ]
+    },
     "matbench_perovskites": {
       "fold_values": [
         0.027298728992017792,
@@ -74,13 +110,15 @@
     }
   },
   "predictions_file": "predictions.json.gz",
-  "predictions_sha256": "42e79893cb922630aec17dbe07ee15f267375903f2fab392a1eaf1d0191c03f3",
+  "predictions_sha256": "4480db8d919252d758204bcb229520c611b8feb0c137c3adba7ce12b49cb4f61",
   "private_ip_included": false,
   "schema": "scientia_matbench_sota_reproduction_receipt_v1",
   "source_result_sha256": {
     "results/matbench_classification_board_metric_v2/matbench_glass.json": "f84b2915e6d0c32d561b7a2e8064f5691455ce6bdb9bf0434801723a75c475c5",
     "results/matbench_moduli_strongest_base_v1/matbench_log_gvrh.json": "1abd740bdfa13dc71d31bb79d8dd5e7efc6cb715778a2dfb7e3adc42399d09bb",
     "results/matbench_moduli_strongest_base_v1/matbench_log_kvrh.json": "628484931b5828e63cd0da82bfc4fe371b20489c930cda9f1fc391121b8aaa51",
+    "results/matbench_reconstructed_row_artifacts_v1/matbench_mp_e_form.json.gz": "2c0f16e74b15b9e0a0a74f9d8f02cbd5f47585a28444b46a1a97a468129d05a7",
+    "results/matbench_reconstructed_row_artifacts_v1/matbench_mp_gap.json.gz": "da727e7dec95c8ebde1396578974e2c1f131d3f00f978f7f3c8bf1889485d7e1",
     "results/matbench_strongest_base_all13_v1/matbench_perovskites.json": "f56850552a33618978d1a8e86b901f3749a7d42f59c728bf5c85ba444f2caacf"
   }
 }

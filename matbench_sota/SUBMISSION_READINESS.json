@@ -4,6 +4,8 @@
     "matbench_glass",
     "matbench_log_gvrh",
     "matbench_log_kvrh",
+    "matbench_mp_e_form",
+    "matbench_mp_gap",
     "matbench_perovskites"
   ],
   "metric_reproduction": "python reproduce_metrics.py",
