@@ -1,5 +1,23 @@
 {
   "endpoints": {
+    "matbench_expt_gap": {
+      "fold_values": [
+        0.268513329827793,
+        0.2940785335301985,
+        0.2806139335546575,
+        0.29709866530586054,
+        0.2872000380609322
+      ],
+      "mean": 0.28550090005588835,
+      "metric": "mae",
+      "rows_per_fold": [
+        921,
+        921,
+        921,
+        921,
+        920
+      ]
+    },
     "matbench_glass": {
       "fold_values": [
         0.9737083950087193,
@@ -110,13 +128,14 @@
     }
   },
   "predictions_file": "predictions.json.gz",
-  "predictions_sha256": "4480db8d919252d758204bcb229520c611b8feb0c137c3adba7ce12b49cb4f61",
+  "predictions_sha256": "242c196317eb89ca3909c9c27d839ef38b1a25c6f791af7321772ebbe698f015",
   "private_ip_included": false,
   "schema": "scientia_matbench_sota_reproduction_receipt_v1",
   "source_result_sha256": {
     "results/matbench_classification_board_metric_v2/matbench_glass.json": "f84b2915e6d0c32d561b7a2e8064f5691455ce6bdb9bf0434801723a75c475c5",
     "results/matbench_moduli_strongest_base_v1/matbench_log_gvrh.json": "1abd740bdfa13dc71d31bb79d8dd5e7efc6cb715778a2dfb7e3adc42399d09bb",
     "results/matbench_moduli_strongest_base_v1/matbench_log_kvrh.json": "628484931b5828e63cd0da82bfc4fe371b20489c930cda9f1fc391121b8aaa51",
+    "results/matbench_reconstructed_row_artifacts_v1/matbench_expt_gap.json.gz": "f5b3db20c60d5208793eb0a6dc1c3f11bfb4f20bf3c18e6a54b0f9eec155c076",
     "results/matbench_reconstructed_row_artifacts_v1/matbench_mp_e_form.json.gz": "2c0f16e74b15b9e0a0a74f9d8f02cbd5f47585a28444b46a1a97a468129d05a7",
     "results/matbench_reconstructed_row_artifacts_v1/matbench_mp_gap.json.gz": "da727e7dec95c8ebde1396578974e2c1f131d3f00f978f7f3c8bf1889485d7e1",
     "results/matbench_strongest_base_all13_v1/matbench_perovskites.json": "f56850552a33618978d1a8e86b901f3749a7d42f59c728bf5c85ba444f2caacf"

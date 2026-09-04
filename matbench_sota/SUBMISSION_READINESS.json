@@ -1,6 +1,7 @@
 {
   "core_ip_distribution_allowed": false,
   "endpoints": [
+    "matbench_expt_gap",
     "matbench_glass",
     "matbench_log_gvrh",
     "matbench_log_kvrh",

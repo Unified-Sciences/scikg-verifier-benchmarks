@@ -68,7 +68,7 @@ protocol is recorded in `info.json` and [METHOD.md](METHOD.md).
 ## Additional MatBench headline results
 
 The `matbench_sota` bundle contains final held-out predictions and labels for
-six additional five-fold evaluations:
+seven additional five-fold evaluations:
 
 - Log bulk modulus: **0.0476983337 MAE**
 - Log shear modulus: **0.0647780857 MAE**
@@ -76,9 +76,10 @@ six additional five-fold evaluations:
 - Materials Project band gap: **0.1555109980 MAE**
 - Perovskites: **0.0268923162 MAE**
 - Glass formation: **0.9632361970 balanced accuracy**
+- Experimental band gap: **0.2855009001 MAE**
 
 Run `python matbench_sota/reproduce_metrics.py` to validate the immutable
-prediction archive and recompute all 30 fold-level scores and six reported
+prediction archive and recompute all 35 fold-level scores and seven reported
 means using only the Python standard library. The bundle exposes final outputs
 and benchmark labels without distributing the private evidence graph or
 verifier implementation.
