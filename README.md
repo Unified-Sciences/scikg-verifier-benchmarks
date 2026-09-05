@@ -4,6 +4,28 @@ This repository reproduces the benchmark results reported for SciKG Verify.
 Each result includes the submitted predictions, immutable hashes, benchmark
 metadata, and a small script that recomputes the score from end to end.
 
+## September 5 evaluation correction
+
+**Five historical materials claims are deferred:** dielectric, formation
+energy, Materials Project band gap, perovskites and glass. The old correction
+models trained on other folds' out-of-fold base predictions. Under the official
+base-model training contract, those predictions can depend on labels in the
+eventual correction-model test fold. Excluding that fold's rows from the
+correction model did not establish end-to-end exclusion of test information.
+
+The old elastic-modulus corrections share that issue and are superseded by a
+new method that never fits or calibrates on base predictions. Its primary MAEs
+are **0.064796 for log shear modulus** and **0.048104 for log bulk modulus**;
+the corresponding replacement prediction bundles are not yet included here.
+The experimental band-gap pipeline is a separate result. This finding does
+not establish a defect in the TDC evaluations.
+
+Original prediction archives remain unchanged so the historical scores can
+still be inspected. A passing numerical reproduction or submission-format
+check is **not** validation of the training protocol. Do not use the affected
+historical materials scores as confirmed leaderboard claims. See
+[EVALUATION_STATUS.json](EVALUATION_STATUS.json) for machine-readable status.
+
 Run `python verify_release.py` from the repository root to verify the immutable
 artifacts and reproduce the published scores. The same command runs in CI on
 every push and pull request.
@@ -48,7 +70,7 @@ public. Set `SCIENTIA_VERIFIER_API_URL` only to test another compatible host.
 
 See [METHOD.md](METHOD.md) for the method and evaluation protocol.
 
-## MatBench dielectric
+## Historical MatBench dielectric result — confirmation pending
 
 The `benchmarks/matbench_v0.1_SciKG_Verify` folder contains the native
 MatBench recording for the five official `matbench_dielectric` folds:
@@ -60,15 +82,20 @@ MatBench recording for the five official `matbench_dielectric` folds:
 - one-sided paired sign-flip p-value: **0.0000500**
 
 The native `results.json.gz` contains all 4,764 held-out predictions and is
-accepted by MatBench's official submission validator. The accompanying client
+accepted by MatBench's submission-format validator, which does not validate
+the upstream training boundary. The accompanying client
 requests the same version-pinned verifier output from the public serverless
 endpoint. The complete evaluation
 protocol is recorded in `info.json` and [METHOD.md](METHOD.md).
 
-## Additional MatBench headline results
+## Additional historical MatBench measurements
 
 The `matbench_sota` bundle contains final held-out predictions and labels for
 seven additional five-fold evaluations:
+
+The qualifications above apply to this preserved bundle; its old readiness
+file records prediction-bundle completion, not current eligibility for a
+scientific or leaderboard claim.
 
 - Log bulk modulus: **0.0476983337 MAE**
 - Log shear modulus: **0.0647780857 MAE**

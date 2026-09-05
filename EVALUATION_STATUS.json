@@ -1,0 +1,16 @@
+{
+  "as_of": "2026-09-05",
+  "scope": "Evaluation qualification, separate from immutable numerical reproduction",
+  "matbench_dielectric": "historical score; end-to-end upstream training exclusion not established; claim deferred",
+  "matbench_mp_e_form": "historical score; end-to-end upstream training exclusion not established; claim deferred",
+  "matbench_mp_gap": "historical score; end-to-end upstream training exclusion not established; claim deferred",
+  "matbench_perovskites": "historical score; end-to-end upstream training exclusion not established; claim deferred",
+  "matbench_glass": "historical score; end-to-end upstream training exclusion not established; claim deferred",
+  "matbench_log_gvrh": "old correction score superseded; new outer-training interval MAE 0.06479647988722045; new bundle not yet included here",
+  "matbench_log_kvrh": "old correction score superseded; new outer-training interval MAE 0.04810433461604424; new bundle not yet included here",
+  "matbench_expt_gap": "separate prediction-pipeline result retained",
+  "tdc": "this materials training-dependency finding does not establish a defect in the released TDC evaluations",
+  "affected_materials_submission_ready": false,
+  "numerical_reproduction_is_protocol_certification": false,
+  "prediction_archives_modified": false
+}

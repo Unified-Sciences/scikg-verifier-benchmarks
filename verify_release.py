@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the two public benchmark artifacts using only the standard library."""
+"""Check numerical artifacts; passing is not training-protocol certification."""
 
 from __future__ import annotations
 
@@ -31,7 +31,7 @@ def verify_materials() -> None:
     assert sum(len(fold["data"]) for fold in folds.values()) == 4_764
     mean_mae = statistics.mean(float(fold["scores"]["mae"]) for fold in folds.values())
     assert math.isclose(mean_mae, 0.24932956785914703, rel_tol=0, abs_tol=1e-15)
-    print(f"MatBench dielectric: {mean_mae:.12f} MAE across 4,764 held-out rows")
+    print(f"Historical MatBench dielectric: recorded {mean_mae:.12f} MAE across 4,764 rows; claim deferred")
 
 
 def verify_biology() -> None:
@@ -69,6 +69,9 @@ def verify_additional_materials() -> None:
 
 
 if __name__ == "__main__":
+    status = json.loads((ROOT / "EVALUATION_STATUS.json").read_text())
+    assert status["affected_materials_submission_ready"] is False
+    print("NUMERICAL REPRODUCTION ONLY: five materials claims deferred; old elastic scores superseded. See EVALUATION_STATUS.json.")
     verify_materials()
     verify_biology()
     verify_additional_biology()

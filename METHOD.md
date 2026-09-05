@@ -1,5 +1,23 @@
 # SciKG Verify: scientific verification for physical and biological systems
 
+## Materials evaluation correction — September 5, 2026
+
+The historical MatBench overlays in this release did not establish end-to-end
+exclusion of test information. Their correction models used globally
+out-of-fold base predictions for training. A base model for another fold is
+normally trained on the complement of that fold, which includes the eventual
+correction-model test fold. Gate-only row exclusion does not remove this
+upstream dependency. See `EVALUATION_STATUS.json` for affected and superseded
+claims. Historical numerical predictions are retained, not certified by a
+successful score-reproduction check.
+
+The replacement elastic interval route fits source-context-to-target transfer
+only on outer-training measurements, calibrates on separate source groups,
+and excludes every source shared with the outer test fold. It does not use
+base predictions in fitting or calibration. Its replacement bundles are
+pending. The TDC contract below is a separate evaluation, not a claim about
+the affected materials selectors.
+
 ## Method summary
 
 SciKG Verify treats a model prediction as a scientific claim to be checked
@@ -33,7 +51,7 @@ Every final test prediction is included with a script that recomputes the
 metric against the official TDC data. A versioned HTTPS service reproduces the
 same predictions from the ordered candidate rows.
 
-## Evaluation boundary
+## TDC evaluation boundary
 
 The verifier uses scientific evidence published before the benchmark cutoff.
 It never receives held-out labels, benchmark-derived target values, or
