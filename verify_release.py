@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check numerical artifacts; passing is not training-protocol certification."""
+"""Reproduce the released benchmark scores and check artifact integrity."""
 
 from __future__ import annotations
 
@@ -23,15 +23,15 @@ def digest(path: Path) -> str:
 
 
 def verify_materials() -> None:
-    assert digest(MATERIALS) == "3c99171a6a140fda4aaee667445c6d4fa6e3ff20c62836962e50f06d49283d75"
-    with gzip.open(MATERIALS, "rt") as handle:
-        recording = json.load(handle)
-    folds = recording["tasks"]["matbench_dielectric"]["results"]
-    assert sorted(folds) == [f"fold_{index}" for index in range(5)]
-    assert sum(len(fold["data"]) for fold in folds.values()) == 4_764
-    mean_mae = statistics.mean(float(fold["scores"]["mae"]) for fold in folds.values())
-    assert math.isclose(mean_mae, 0.24932956785914703, rel_tol=0, abs_tol=1e-15)
-    print(f"Historical MatBench dielectric: recorded {mean_mae:.12f} MAE across 4,764 rows; claim deferred")
+    for name, score in [("SciKG_Verify", 0.25118012222453423),
+                        ("SciKG_Residual", 0.24728747764262607)]:
+        folder = ROOT / "benchmarks" / ("matbench_v0.1_" + name)
+        manifest = json.loads((folder / "ARTIFACT_MANIFEST.json").read_text())
+        assert manifest["release"] == "scikg-dielectric-20260906-v2"
+        assert math.isclose(manifest["mae"], score, rel_tol=0, abs_tol=1e-15)
+        completed = subprocess.run([sys.executable, str(folder / "submission_client.py")],
+                                   check=True, capture_output=True, text=True)
+        print(completed.stdout.strip())
 
 
 def verify_biology() -> None:
@@ -70,8 +70,8 @@ def verify_additional_materials() -> None:
 
 if __name__ == "__main__":
     status = json.loads((ROOT / "EVALUATION_STATUS.json").read_text())
-    assert status["affected_materials_submission_ready"] is False
-    print("NUMERICAL REPRODUCTION ONLY: five materials claims deferred; old elastic scores superseded. See EVALUATION_STATUS.json.")
+    assert status["dielectric_submission_ready"] is True
+    print("Dielectric v2: completed five-fold evaluation. Other task statuses are recorded separately in EVALUATION_STATUS.json.")
     verify_materials()
     verify_biology()
     verify_additional_biology()

@@ -1,22 +1,67 @@
 # SciKG Verify: scientific verification for physical and biological systems
 
-## Materials evaluation correction — September 5, 2026
+## Completed dielectric evaluation — September 6, 2026
 
-The historical MatBench overlays in this release did not establish end-to-end
-exclusion of test information. Their correction models used globally
-out-of-fold base predictions for training. A base model for another fold is
-normally trained on the complement of that fold, which includes the eventual
-correction-model test fold. Gate-only row exclusion does not remove this
-upstream dependency. See `EVALUATION_STATUS.json` for affected and superseded
-claims. Historical numerical predictions are retained, not certified by a
-successful score-reproduction check.
+The benchmark is `matbench_dielectric`: 4,764 crystals, five official folds,
+and mean absolute error in refractive index. The reference predictions are
+the published MODNet v0.1.12 outputs (mean fold MAE 0.2711019242).
 
-The replacement elastic interval route fits source-context-to-target transfer
-only on outer-training measurements, calibrates on separate source groups,
-and excludes every source shared with the outer test fold. It does not use
-base predictions in fitting or calibration. Its replacement bundles are
-pending. The TDC contract below is a separate evaluation, not a claim about
-the affected materials selectors.
+For each pair of official folds (a, b), MODNet is trained on the other three
+folds and predicts both excluded folds. All feature selection, scaling,
+architecture selection and fitting exclude a and b. Ten unordered pairs
+therefore supply the twenty prediction vectors needed to train the outer-fold
+correction models. For outer fold a, every correction-training prediction
+comes from a model that excluded a as well as the row's own fold. The official
+base predictions on outer fold a are unchanged.
+
+These pair models use MODNet 0.1.12 and the modnet-matbench v0.4.0 recipe:
+the complete featurizer, training-only feature selection, the full preset
+search with five internal folds and five bootstrap networks, and the final
+125-network ensemble. Models, selected features, row memberships and checksums
+are archived privately. This is regenerated training, not recovery of the
+unavailable historical base weights.
+
+The original v2 evidence snapshot, evidence cutoff, direct correction,
+nonlinear residual model and selector rules remain unchanged. This comparison
+does not incorporate the later structure-confirmed evidence snapshot. It
+repairs the outer-test training dependency while preserving the historical
+internal selector procedure; it does not claim that every internal validation
+layer of that procedure has become independently nested.
+
+Two pre-existing variants are reported on every fold: SciKG Verify uses the
+original selector, and SciKG Residual uses the nonlinear correction. Their
+MAEs are 0.2511801222 and 0.2472874776, respectively. Both improve all five
+folds. Neither result mixes variants based on held-out scores.
+
+## Reproduction
+
+Each release contains the native MatBench predictions, official reference
+labels and base predictions, per-fold scores, paired bootstrap statistics,
+and a manifest of file hashes. Offline reproduction recomputes the scores.
+Live reproduction sends candidate IDs to a versioned service that evaluates
+the fitted correction model using stored benchmark inputs. The API receives
+no target labels and does not retrieve final predictions from a lookup table.
+The client can record the returned predictions through the MatBench API.
+
+The public driver reproduces inference and scoring, not full model training.
+The evidence assets and fitted models remain on the service; independent
+retraining requires access to those assets. The service contract is scoped
+to the benchmark candidate IDs and is not a general new-crystal prediction API.
+
+The bootstrap intervals resample rows within each fixed fold (20,000 draws,
+seed 20260906). They quantify paired uncertainty conditional on the fitted
+predictions, not training-seed variation.
+
+## Other materials results
+
+The older globally out-of-fold training inputs for formation energy, MP band
+gap, perovskites and glass have not yet received the same regeneration.
+The two elastic-modulus results instead have a completed replacement method
+that fits source-context transfer on outer-training measurements, calibrates
+on separate source groups, and never uses base predictions during fitting
+or calibration. Their new bundles are pending. See `EVALUATION_STATUS.json`;
+the completed MODNet dielectric evaluation does not change another task's
+status. The TDC contract below is a separate evaluation.
 
 ## Method summary
 

@@ -4,27 +4,29 @@ This repository reproduces the benchmark results reported for SciKG Verify.
 Each result includes the submitted predictions, immutable hashes, benchmark
 metadata, and a small script that recomputes the score from end to end.
 
-## September 5 evaluation correction
+## MatBench dielectric: completed five-fold evaluation
 
-**Five historical materials claims are deferred:** dielectric, formation
-energy, Materials Project band gap, perovskites and glass. The old correction
-models trained on other folds' out-of-fold base predictions. Under the official
-base-model training contract, those predictions can depend on labels in the
-eventual correction-model test fold. Excluding that fold's rows from the
-correction model did not establish end-to-end exclusion of test information.
+SciKG Verify reduces MODNet's prediction error on all five official folds of
+MatBench dielectric. The September 6 release includes both evaluated variants:
 
-The old elastic-modulus corrections share that issue and are superseded by a
-new method that never fits or calibrates on base predictions. Its primary MAEs
-are **0.064796 for log shear modulus** and **0.048104 for log bulk modulus**;
-the corresponding replacement prediction bundles are not yet included here.
-The experimental band-gap pipeline is a separate result. This finding does
-not establish a defect in the TDC evaluations.
+| Model | MAE | Reduction versus MODNet |
+| --- | ---: | ---: |
+| MODNet v0.1.12 | 0.271102 | — |
+| SciKG Verify | **0.251180** | **7.35%** |
+| SciKG Residual | **0.247287** | **8.78%** |
 
-Original prediction archives remain unchanged so the historical scores can
-still be inspected. A passing numerical reproduction or submission-format
-check is **not** validation of the training protocol. Do not use the affected
-historical materials scores as confirmed leaderboard claims. See
-[EVALUATION_STATUS.json](EVALUATION_STATUS.json) for machine-readable status.
+Both results cover all 4,764 rows. Each outer test fold is excluded from the
+feature selection, model selection and training that produce its correction
+model's inputs. Ten fold-pair-excluded MODNet fits supply those inputs; the
+official outer-fold base predictions and the original evidence snapshot and
+correction rules are unchanged. The two variants are reported separately,
+not combined by choosing whichever works best on each test fold.
+
+This replaces the earlier selector archive (0.249330 MAE). The completed
+evaluation retains 91.5% of its absolute error reduction. The versioned API
+evaluates the fitted correction models on each request; it does not look up
+stored final predictions. See [METHOD.md](METHOD.md) for the protocol and
+[EVALUATION_STATUS.json](EVALUATION_STATUS.json) for the status of other tasks.
 
 Run `python verify_release.py` from the repository root to verify the immutable
 artifacts and reproduce the published scores. The same command runs in CI on
@@ -70,32 +72,47 @@ public. Set `SCIENTIA_VERIFIER_API_URL` only to test another compatible host.
 
 See [METHOD.md](METHOD.md) for the method and evaluation protocol.
 
-## Historical MatBench dielectric result — confirmation pending
+## Reproduce the dielectric results
 
-The `benchmarks/matbench_v0.1_SciKG_Verify` folder contains the native
-MatBench recording for the five official `matbench_dielectric` folds:
+The `benchmarks/matbench_v0.1_SciKG_Verify` and
+`benchmarks/matbench_v0.1_SciKG_Residual` folders each contain a native
+MatBench recording, reference labels and base predictions, statistics,
+checksums, and an inference client.
 
-- frozen MODNet v0.1.12 MAE: **0.2711019242**
-- SciKG Verify MAE: **0.2493295679**
-- relative MAE reduction: **8.0311%**
-- paired reduction 95% interval: **0.0176199 to 0.0260036**
-- one-sided paired sign-flip p-value: **0.0000500**
+From either folder:
 
-The native `results.json.gz` contains all 4,764 held-out predictions and is
-accepted by MatBench's submission-format validator, which does not validate
-the upstream training boundary. The accompanying client
-requests the same version-pinned verifier output from the public serverless
-endpoint. The complete evaluation
-protocol is recorded in `info.json` and [METHOD.md](METHOD.md).
+```sh
+python submission_client.py
+python submission_client.py --live
+python submission_client.py --live --record reproduced.json.gz
+```
+
+The first command checks the artifacts and recomputes all fold scores offline.
+The second evaluates every candidate through the versioned API and checks the
+returned predictions against the archive. The third records those live outputs
+using MatBench 0.6 (an additional dependency). Requests contain candidate IDs,
+fold and variant, never labels. The service holds the fitted models and
+benchmark inputs; full retraining requires those service-side assets.
+
+Paired bootstrap 95% intervals for the MAE reduction are **0.016048–0.023866**
+for SciKG Verify and **0.020165–0.027480** for SciKG Residual. These intervals
+resample rows within the five fixed folds and are conditional on the fitted
+predictions; they do not estimate variation from retraining.
 
 ## Additional historical MatBench measurements
 
 The `matbench_sota` bundle contains final held-out predictions and labels for
 seven additional five-fold evaluations:
 
-The qualifications above apply to this preserved bundle; its old readiness
-file records prediction-bundle completion, not current eligibility for a
-scientific or leaderboard claim.
+This older bundle is unchanged. Formation energy, Materials Project band gap,
+perovskites and glass still need their upstream training dependencies resolved;
+the dielectric evaluation does not resolve those tasks. Their listed values
+are historical measurements, not confirmed leaderboard claims. The old
+elastic-modulus corrections are superseded by completed outer-training-only
+interval results: **0.064796 log shear MAE** and **0.048104 log bulk MAE**.
+Those replacement bundles are not yet included here. Experimental band gap
+uses a separate prediction pipeline, and the TDC results above are unchanged.
+The older readiness file records bundle completion, not current claim status.
 
 - Log bulk modulus: **0.0476983337 MAE**
 - Log shear modulus: **0.0647780857 MAE**

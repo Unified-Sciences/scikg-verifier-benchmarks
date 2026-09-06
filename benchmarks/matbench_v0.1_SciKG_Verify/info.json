@@ -1,15 +1,14 @@
 {
   "authors": "Gaurav Sahu",
   "algorithm": "SciKG Verify",
-  "algorithm_long": "Historical scientific-knowledge-graph correction of MODNet v0.1.12 MatBench dielectric predictions. Evaluation correction dated 2026-09-05: the selector consumes global out-of-fold base predictions, whose upstream models may have trained on the eventual selector test fold. End-to-end test exclusion is not established and the leading claim is deferred.",
-  "bibtex_refs": "",
-  "notes": "Historical recorded mean official-fold MAE: 0.24932956785914703. Temporal evidence filtering and selector-row exclusion do not resolve the upstream training dependency. This unchanged recording is retained for numerical inspection, not submitted as a confirmed current leaderboard claim. See EVALUATION_STATUS.json.",
+  "algorithm_long": "Scientific-evidence correction of MODNet refractive-index predictions. The original selector chooses between a direct-evidence correction and a nonlinear residual correction. For each outer fold, correction-training base predictions come from MODNet models excluding that outer fold and the prediction fold. The official outer-fold MODNet predictions remain unchanged. The same original v2 evidence snapshot is retained. The benchmark driver uses a versioned hosted verifier; models and evidence remain on the service.",
+  "bibtex_refs": "@article{Dunn2020, title={Benchmarking materials property prediction methods: the Matbench test set and Automatminer reference algorithm}, author={Dunn, Alexander and Wang, Qi and Ganose, Alex and Dopp, Daniel and Jain, Anubhav}, journal={npj Computational Materials}, year={2020}, doi={10.1038/s41524-020-00406-3}}",
+  "notes": "Five official folds; 4,764 candidates; mean MAE 0.251180122225. Prior literature/database evidence is used by the verifier. This release repairs the outer-test training dependency while keeping the original correction rules fixed. V2 evidence matching is retained, not replaced by later StructureMatcher-confirmed evidence. The selector and nonlinear variant are reported together. Hosted inference reproduces the saved predictions; full retraining requires access to the service-side assets.",
   "requirements": {
     "python": [
       "matbench==0.6",
-      "numpy",
-      "pandas",
-      "scikit-learn"
+      "numpy<2",
+      "pandas"
     ]
   }
 }
