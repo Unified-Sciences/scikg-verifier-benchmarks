@@ -38,7 +38,7 @@ The `tdc_sota` bundle contains final held-out predictions and labels for six
 additional five-seed ADMET evaluations:
 
 - Ames mutagenicity: **0.8735406998 ROC-AUC**
-- Drug half-life: **0.5860994384 Spearman correlation**
+- Drug half-life: **0.5938003779 Spearman correlation**
 - Human intestinal absorption: **0.9950205761 ROC-AUC**
 - AqSolDB solubility: **0.7126511346 MAE**
 - CYP2C9 substrate: **0.4896853735 PR-AUC**

@@ -58,7 +58,7 @@
       ]
     },
     "half_life_obach": {
-      "mean": 0.5860994383852979,
+      "mean": 0.5938003778947613,
       "metric": "spearman",
       "rows_per_seed": [
         135,
@@ -67,13 +67,13 @@
         135,
         135
       ],
-      "sample_standard_deviation": 0.028549470908970597,
+      "sample_standard_deviation": 0.021178910219524037,
       "seed_values": [
-        0.5882492863003896,
-        0.5874796056697836,
-        0.6275107412306953,
+        0.5847924081837199,
+        0.5899461610266286,
+        0.6311274023894634,
         0.579892318519071,
-        0.54736524020655
+        0.5832435993549234
       ]
     },
     "hia_hou": {
@@ -116,14 +116,14 @@
     }
   },
   "predictions_file": "predictions.json.gz",
-  "predictions_sha256": "030418be4ab365a1bc3a203897cfe14bcf775facb4e7cc13354d76e9adba80cb",
+  "predictions_sha256": "69570debe7967f18e547de2ab8557888b74bbbb650d6b7c6a83c4ba0e1636f8d",
   "private_ip_included": false,
   "schema": "scientia_tdc_sota_reproduction_receipt_v1",
   "source_result_sha256": {
+    "results/tdc_all22_strong_base_overlays_v2/half_life_obach.json": "4d3cfe04baa4f6a4d0263698deb6c6284a8e2566f3d9c77c14f2946da2084222",
     "results/tdc_overlay_terminal_updates_2026-09-05/cyp2c9_substrate.json": "ff7889d0d2774304c547807253c4ed99ac2ac0b8faa38ec05e60fdfe4df64d16",
     "results/tdc_overlay_terminal_updates_2026-09-05/cyp3a4_substrate.json": "651a3925fc5056c8d35210dfa7aec5daea19538d5af8faf820f28adf1d571c62",
     "results/tdc_strong_base_kg_overlays_v1/ames.json": "229abc7111b2003b7ac48d3e343b1e1736315c7655bdcb1896fb056720d9ff46",
-    "results/tdc_strong_base_kg_overlays_v1/half_life_obach.json": "49781e81f2cf7228b22641baf3954de5d12551afc3b025c197e17704b110edb1",
     "results/tdc_strong_base_kg_overlays_v1/hia_hou.json": "038cfacd7e3a04e24442ad9691b41ef0355562b035878aba2db7bed181cd0c11",
     "results/tdc_strong_base_kg_overlays_v1/solubility_aqsoldb.json": "cdd7c303763b36c1855233210659e04391c9bb6d2cf9477baa5ddca412a69e6d"
   }
