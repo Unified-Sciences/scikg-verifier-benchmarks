@@ -19,6 +19,44 @@
         0.878597583661321
       ]
     },
+    "cyp2c9_substrate": {
+      "mean": 0.48968537345315777,
+      "metric": "pr-auc",
+      "rows_per_seed": [
+        135,
+        135,
+        135,
+        135,
+        135
+      ],
+      "sample_standard_deviation": 0.019392555083095665,
+      "seed_values": [
+        0.49521159375505763,
+        0.46677159542143,
+        0.47185779542246853,
+        0.5096198496185692,
+        0.5049660330482638
+      ]
+    },
+    "cyp3a4_substrate": {
+      "mean": 0.6850813743218807,
+      "metric": "roc-auc",
+      "rows_per_seed": [
+        135,
+        135,
+        135,
+        135,
+        135
+      ],
+      "sample_standard_deviation": 0.013030561229876236,
+      "seed_values": [
+        0.6713381555153707,
+        0.680379746835443,
+        0.6794755877034359,
+        0.6885171790235082,
+        0.7056962025316456
+      ]
+    },
     "half_life_obach": {
       "mean": 0.5860994383852979,
       "metric": "spearman",
@@ -78,10 +116,12 @@
     }
   },
   "predictions_file": "predictions.json.gz",
-  "predictions_sha256": "4cfbf71863150451d5a82778827d509e8f6fde2a659227a99bece3f0838d01da",
+  "predictions_sha256": "030418be4ab365a1bc3a203897cfe14bcf775facb4e7cc13354d76e9adba80cb",
   "private_ip_included": false,
   "schema": "scientia_tdc_sota_reproduction_receipt_v1",
   "source_result_sha256": {
+    "results/tdc_overlay_terminal_updates_2026-09-05/cyp2c9_substrate.json": "ff7889d0d2774304c547807253c4ed99ac2ac0b8faa38ec05e60fdfe4df64d16",
+    "results/tdc_overlay_terminal_updates_2026-09-05/cyp3a4_substrate.json": "651a3925fc5056c8d35210dfa7aec5daea19538d5af8faf820f28adf1d571c62",
     "results/tdc_strong_base_kg_overlays_v1/ames.json": "229abc7111b2003b7ac48d3e343b1e1736315c7655bdcb1896fb056720d9ff46",
     "results/tdc_strong_base_kg_overlays_v1/half_life_obach.json": "49781e81f2cf7228b22641baf3954de5d12551afc3b025c197e17704b110edb1",
     "results/tdc_strong_base_kg_overlays_v1/hia_hou.json": "038cfacd7e3a04e24442ad9691b41ef0355562b035878aba2db7bed181cd0c11",

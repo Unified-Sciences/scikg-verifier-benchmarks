@@ -34,17 +34,19 @@ every push and pull request.
 
 ## Additional TDC headline results
 
-The `tdc_sota` bundle contains final held-out predictions and labels for four
+The `tdc_sota` bundle contains final held-out predictions and labels for six
 additional five-seed ADMET evaluations:
 
 - Ames mutagenicity: **0.8735406998 ROC-AUC**
 - Drug half-life: **0.5860994384 Spearman correlation**
 - Human intestinal absorption: **0.9950205761 ROC-AUC**
 - AqSolDB solubility: **0.7126511346 MAE**
+- CYP2C9 substrate: **0.4896853735 PR-AUC**
+- CYP3A4 substrate: **0.6850813743 ROC-AUC**
 
 Run `python tdc_sota/reproduce_metrics.py` to validate the immutable prediction
-archive, preserve every held-out row identity and order, and recompute all 20
-seed-level scores and the four reported means using only the Python standard
+archive, preserve every held-out row identity and order, and recompute all 30
+seed-level scores and the six reported means using only the Python standard
 library. The bundle contains final outputs and benchmark labels; it does not
 contain the private evidence graph or verifier implementation.
 
@@ -99,31 +101,24 @@ for SciKG Verify and **0.020165–0.027480** for SciKG Residual. These intervals
 resample rows within the five fixed folds and are conditional on the fitted
 predictions; they do not estimate variation from retraining.
 
-## Additional historical MatBench measurements
+## Eight MatBench numerical leaders
 
 The `matbench_sota` bundle contains final held-out predictions and labels for
-seven additional five-fold evaluations:
+all eight five-fold evaluations. The five tasks affected by the September 5
+dependency audit now use strict pair-excluded upstream models; the two elastic
+tasks use outer-training-only physical intervals.
 
-This older bundle is unchanged. Formation energy, Materials Project band gap,
-perovskites and glass still need their upstream training dependencies resolved;
-the dielectric evaluation does not resolve those tasks. Their listed values
-are historical measurements, not confirmed leaderboard claims. The old
-elastic-modulus corrections are superseded by completed outer-training-only
-interval results: **0.064796 log shear MAE** and **0.048104 log bulk MAE**.
-Those replacement bundles are not yet included here. Experimental band gap
-uses a separate prediction pipeline, and the TDC results above are unchanged.
-The older readiness file records bundle completion, not current claim status.
-
-- Log bulk modulus: **0.0476983337 MAE**
-- Log shear modulus: **0.0647780857 MAE**
-- Formation energy: **0.0168898491 MAE**
-- Materials Project band gap: **0.1555109980 MAE**
-- Perovskites: **0.0268923162 MAE**
-- Glass formation: **0.9632361970 balanced accuracy**
+- Dielectric: **0.2472874776 MAE**
+- Log bulk modulus: **0.0481043346 MAE**
+- Log shear modulus: **0.0647964799 MAE**
+- Formation energy: **0.0168858552 MAE**
+- Materials Project band gap: **0.1557439318 MAE**
+- Perovskites: **0.0268776990 MAE**
+- Glass formation: **0.9639540796 balanced accuracy**
 - Experimental band gap: **0.2855009001 MAE**
 
 Run `python matbench_sota/reproduce_metrics.py` to validate the immutable
-prediction archive and recompute all 35 fold-level scores and seven reported
+prediction archive and recompute all 40 fold-level scores and eight reported
 means using only the Python standard library. The bundle exposes final outputs
 and benchmark labels without distributing the private evidence graph or
 verifier implementation.

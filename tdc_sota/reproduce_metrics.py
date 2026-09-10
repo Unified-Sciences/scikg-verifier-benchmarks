@@ -39,6 +39,33 @@ def roc_auc(labels: list[float], scores: list[float]) -> float:
     ) / (len(positives) * negatives)
 
 
+def average_precision(labels: list[float], scores: list[float]) -> float:
+    """Match sklearn average_precision_score, including tied-score groups."""
+    positives = sum(label == 1 for label in labels)
+    if positives == 0:
+        return 0.0
+    ordered = sorted(zip(scores, labels, strict=True), reverse=True)
+    tp = fp = 0
+    previous_recall = 0.0
+    value = 0.0
+    cursor = 0
+    while cursor < len(ordered):
+        end = cursor
+        score = ordered[cursor][0]
+        while end < len(ordered) and ordered[end][0] == score:
+            if ordered[end][1] == 1:
+                tp += 1
+            else:
+                fp += 1
+            end += 1
+        recall = tp / positives
+        precision = tp / (tp + fp)
+        value += (recall - previous_recall) * precision
+        previous_recall = recall
+        cursor = end
+    return value
+
+
 def pearson(left: list[float], right: list[float]) -> float:
     left_mean, right_mean = statistics.mean(left), statistics.mean(right)
     numerator = sum((a - left_mean) * (b - right_mean) for a, b in zip(left, right, strict=True))
@@ -52,6 +79,8 @@ def pearson(left: list[float], right: list[float]) -> float:
 def metric(name: str, labels: list[float], predictions: list[float]) -> float:
     if name == "roc-auc":
         return roc_auc(labels, predictions)
+    if name == "pr-auc":
+        return average_precision(labels, predictions)
     if name == "spearman":
         return pearson(ranks(labels), ranks(predictions))
     if name == "mae":

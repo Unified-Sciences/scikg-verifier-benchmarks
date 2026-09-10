@@ -2,6 +2,8 @@
   "core_ip_distribution_allowed": false,
   "endpoints": [
     "ames",
+    "cyp2c9_substrate",
+    "cyp3a4_substrate",
     "half_life_obach",
     "hia_hou",
     "solubility_aqsoldb"

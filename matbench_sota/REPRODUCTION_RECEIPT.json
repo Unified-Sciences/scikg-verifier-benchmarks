@@ -1,10 +1,28 @@
 {
   "endpoints": {
+    "matbench_dielectric": {
+      "fold_values": [
+        0.14924876541439064,
+        0.21280008842939888,
+        0.35916897980684787,
+        0.2568909916360868,
+        0.25832856292640605
+      ],
+      "mean": 0.24728747764262607,
+      "metric": "mae",
+      "rows_per_fold": [
+        953,
+        953,
+        953,
+        953,
+        952
+      ]
+    },
     "matbench_expt_gap": {
       "fold_values": [
         0.268513329827793,
         0.2940785335301985,
-        0.2806139335546575,
+        0.2806139335546576,
         0.29709866530586054,
         0.2872000380609322
       ],
@@ -20,13 +38,13 @@
     },
     "matbench_glass": {
       "fold_values": [
-        0.9737083950087193,
-        0.9623921386952313,
-        0.959013645796846,
-        0.9562547315849539,
-        0.9648120736865496
+        0.9743279736952124,
+        0.9662734507708011,
+        0.9610946015675905,
+        0.9601360436605236,
+        0.9579383283804703
       ],
-      "mean": 0.96323619695446,
+      "mean": 0.9639540796149196,
       "metric": "balanced_accuracy",
       "rows_per_fold": [
         1136,
@@ -38,13 +56,13 @@
     },
     "matbench_log_gvrh": {
       "fold_values": [
-        0.06418953672905091,
-        0.06507724821472922,
-        0.0639840826237473,
-        0.0650699790532065,
-        0.06556958185357896
+        0.06401928343601009,
+        0.0660118287805108,
+        0.06329721356083474,
+        0.06542895227649946,
+        0.06522512138224715
       ],
-      "mean": 0.06477808569486258,
+      "mean": 0.06479647988722045,
       "metric": "mae",
       "rows_per_fold": [
         2198,
@@ -56,13 +74,13 @@
     },
     "matbench_log_kvrh": {
       "fold_values": [
-        0.046881240617423235,
-        0.04903135514409846,
-        0.04328084231703006,
-        0.05231071859225535,
-        0.046987511586033585
+        0.047646287521841156,
+        0.04889263545079765,
+        0.04491415981811151,
+        0.05238263005619178,
+        0.046685960233279124
       ],
-      "mean": 0.047698333651368136,
+      "mean": 0.04810433461604424,
       "metric": "mae",
       "rows_per_fold": [
         2198,
@@ -74,13 +92,13 @@
     },
     "matbench_mp_e_form": {
       "fold_values": [
-        0.01723194239907533,
-        0.01660502409670267,
-        0.016732076761671096,
-        0.01715736230907357,
-        0.016722839809883528
+        0.017245161753097413,
+        0.016609505301557793,
+        0.01668522324375236,
+        0.01715644968537167,
+        0.01673293594328285
       ],
-      "mean": 0.016889849075281238,
+      "mean": 0.01688585518541242,
       "metric": "mae",
       "rows_per_fold": [
         26551,
@@ -92,13 +110,13 @@
     },
     "matbench_mp_gap": {
       "fold_values": [
-        0.1528219926641789,
-        0.15619523828956036,
-        0.15677807984645029,
-        0.15402531695044694,
-        0.15773436237015478
+        0.15325406803778435,
+        0.1561918483614336,
+        0.15642616614596982,
+        0.15501900553755052,
+        0.15782857072657785
       ],
-      "mean": 0.15551099802415824,
+      "mean": 0.15574393176186324,
       "metric": "mae",
       "rows_per_fold": [
         21223,
@@ -110,13 +128,13 @@
     },
     "matbench_perovskites": {
       "fold_values": [
-        0.027298728992017792,
-        0.02801060381336471,
-        0.02557329595241432,
-        0.027007809094817734,
-        0.026571143102226025
+        0.027289234364874234,
+        0.027975986705580425,
+        0.02558256756606991,
+        0.026982428231553845,
+        0.026558278038736664
       ],
-      "mean": 0.026892316190968116,
+      "mean": 0.026877698981363017,
       "metric": "mae",
       "rows_per_fold": [
         3786,
@@ -128,16 +146,19 @@
     }
   },
   "predictions_file": "predictions.json.gz",
-  "predictions_sha256": "242c196317eb89ca3909c9c27d839ef38b1a25c6f791af7321772ebbe698f015",
+  "predictions_sha256": "af6797e7095ce056f679978afb40faf53d4e8c478776fa5d0c89a29ba10b696b",
   "private_ip_included": false,
   "schema": "scientia_matbench_sota_reproduction_receipt_v1",
   "source_result_sha256": {
-    "results/matbench_classification_board_metric_v2/matbench_glass.json": "f84b2915e6d0c32d561b7a2e8064f5691455ce6bdb9bf0434801723a75c475c5",
+    "results/glass_pair_excluded_strict_v1/matbench_glass.json": "39e8a42e5f1fbeab21ef9a33cf5231979b6b07ef2c66df62b5a6d8d050d0f22f",
     "results/matbench_moduli_strongest_base_v1/matbench_log_gvrh.json": "1abd740bdfa13dc71d31bb79d8dd5e7efc6cb715778a2dfb7e3adc42399d09bb",
     "results/matbench_moduli_strongest_base_v1/matbench_log_kvrh.json": "628484931b5828e63cd0da82bfc4fe371b20489c930cda9f1fc391121b8aaa51",
     "results/matbench_reconstructed_row_artifacts_v1/matbench_expt_gap.json.gz": "f5b3db20c60d5208793eb0a6dc1c3f11bfb4f20bf3c18e6a54b0f9eec155c076",
-    "results/matbench_reconstructed_row_artifacts_v1/matbench_mp_e_form.json.gz": "2c0f16e74b15b9e0a0a74f9d8f02cbd5f47585a28444b46a1a97a468129d05a7",
-    "results/matbench_reconstructed_row_artifacts_v1/matbench_mp_gap.json.gz": "da727e7dec95c8ebde1396578974e2c1f131d3f00f978f7f3c8bf1889485d7e1",
-    "results/matbench_strongest_base_all13_v1/matbench_perovskites.json": "f56850552a33618978d1a8e86b901f3749a7d42f59c728bf5c85ba444f2caacf"
+    "results/materials_context_intervals_v1/matbench_log_gvrh.json": "1c5ccb1eb42f22f6bde6a6e26f0534833b649dbc4eda5d23c1296986e0b133f7",
+    "results/materials_context_intervals_v1/matbench_log_kvrh.json": "29af4dcb8ef8b6b828931c10ec40a13488d7ae2e4e412689fd3e0d74ff3caad5",
+    "results/materials_pair_excluded_strict_v1/matbench_mp_e_form.json": "1ca59560b55e42c59d73ed3a2564b0216977ca5da5d48d771ef4f00fdba48a67",
+    "results/materials_pair_excluded_strict_v1/matbench_mp_gap.json": "207450488dab01f48f528ee11a66bc5081c3651cb602ca5c7943ddac4e324ece",
+    "results/materials_pair_excluded_strict_v1/matbench_perovskites.json": "46318d38f7120e6c4c7a5be9dfc9dcbdea480582ade50d39dd937732674214d0",
+    "results/modnet_dependency_resolution_v1/release_20260906/all_folds.json": "a1bf3e1a9667cc6981628ebf21ba40f119d353ceb132f8744f273ac2db412054"
   }
 }
