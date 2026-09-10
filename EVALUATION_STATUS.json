@@ -14,6 +14,8 @@
   "matbench_log_kvrh": "outer-training-only physical interval complete; MAE 0.04810433461604424; included in current bundle",
   "matbench_expt_gap": "separate prediction-pipeline result retained",
   "tdc": "this materials training-dependency finding does not establish a defect in the released TDC evaluations",
+  "tdc_all22": "complete: 22 endpoints, five seeds per endpoint, 110 endpoint-seed evaluations; seven numerical leaders against saved published comparisons",
+  "tdc_all22_public_bundle": "seven leading endpoints exported with held-out labels and predictions for offline metric reproduction",
   "affected_materials_submission_ready": true,
   "strict_pair_excluded_materials_repairs_complete": 5,
   "prediction_archives_modified": true

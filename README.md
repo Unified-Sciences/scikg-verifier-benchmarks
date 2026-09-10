@@ -34,25 +34,26 @@ every push and pull request.
 
 ## Additional TDC headline results
 
-The `tdc_sota` bundle contains final held-out predictions and labels for six
-additional five-seed ADMET evaluations:
+The `tdc_sota` bundle contains final held-out predictions and labels for all
+seven leading five-seed ADMET evaluations from the completed 22-endpoint audit:
 
-- Ames mutagenicity: **0.8735406998 ROC-AUC**
+- Ames mutagenicity: **0.8776506295 ROC-AUC**
 - Drug half-life: **0.5938003779 Spearman correlation**
-- Human intestinal absorption: **0.9950205761 ROC-AUC**
+- Human intestinal absorption: **0.9952674897 ROC-AUC**
 - AqSolDB solubility: **0.7126511346 MAE**
 - CYP2C9 substrate: **0.4896853735 PR-AUC**
 - CYP3A4 substrate: **0.6850813743 ROC-AUC**
+- P-glycoprotein: **0.9450013330 ROC-AUC**
 
 Run `python tdc_sota/reproduce_metrics.py` to validate the immutable prediction
-archive, preserve every held-out row identity and order, and recompute all 30
-seed-level scores and the six reported means using only the Python standard
+archive, preserve every held-out row identity and order, and recompute all 35
+seed-level scores and the seven reported means using only the Python standard
 library. The bundle contains final outputs and benchmark labels; it does not
 contain the private evidence graph or verifier implementation.
 
-## TDC P-glycoprotein
+## Earlier TDC P-glycoprotein submission artifact
 
-The `tdc_pgp` folder records the five official TDC seeds for
+The `tdc_pgp` folder preserves the earlier submitted five-seed result for
 `ADMET_Group/Pgp_Broccatelli`:
 
 - ROC-AUC: **0.9432418022 +/- 0.0018795697** (sample standard deviation)

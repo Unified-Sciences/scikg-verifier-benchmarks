@@ -1,7 +1,7 @@
 {
   "endpoints": {
     "ames": {
-      "mean": 0.8735406998374747,
+      "mean": 0.8776506295404257,
       "metric": "roc-auc",
       "rows_per_seed": [
         1457,
@@ -10,13 +10,13 @@
         1457,
         1457
       ],
-      "sample_standard_deviation": 0.007017935405398704,
+      "sample_standard_deviation": 0.0015259086206713148,
       "seed_values": [
-        0.877551939532789,
-        0.8744727721318216,
-        0.8613131253793888,
-        0.8757680784820536,
-        0.878597583661321
+        0.8781981241066008,
+        0.8769370851201317,
+        0.8753901584131274,
+        0.8783890422761363,
+        0.8793387377861325
       ]
     },
     "cyp2c9_substrate": {
@@ -77,7 +77,7 @@
       ]
     },
     "hia_hou": {
-      "mean": 0.9950205761316873,
+      "mean": 0.995267489711934,
       "metric": "roc-auc",
       "rows_per_seed": [
         117,
@@ -86,13 +86,32 @@
         117,
         117
       ],
-      "sample_standard_deviation": 0.0007186933825750317,
+      "sample_standard_deviation": 0.0007560153527109076,
       "seed_values": [
         0.995679012345679,
-        0.994238683127572,
-        0.994238683127572,
-        0.9954732510288066,
-        0.9954732510288067
+        0.9958847736625515,
+        0.9944444444444445,
+        0.9944444444444444,
+        0.9958847736625516
+      ]
+    },
+    "pgp_broccatelli": {
+      "mean": 0.9450013329778727,
+      "metric": "roc-auc",
+      "rows_per_seed": [
+        245,
+        245,
+        245,
+        245,
+        245
+      ],
+      "sample_standard_deviation": 0.0016348689674307957,
+      "seed_values": [
+        0.9432151426286324,
+        0.9463476406291655,
+        0.9460143961610237,
+        0.9462143428419088,
+        0.9432151426286324
       ]
     },
     "solubility_aqsoldb": {
@@ -105,26 +124,27 @@
         1997,
         1997
       ],
-      "sample_standard_deviation": 0.005337566231785735,
+      "sample_standard_deviation": 0.005337566231785768,
       "seed_values": [
         0.7097428298498103,
-        0.7114643709540197,
+        0.7114643709540196,
         0.7059249379052975,
-        0.7176743429517519,
+        0.717674342951752,
         0.7184491915609538
       ]
     }
   },
   "predictions_file": "predictions.json.gz",
-  "predictions_sha256": "69570debe7967f18e547de2ab8557888b74bbbb650d6b7c6a83c4ba0e1636f8d",
+  "predictions_sha256": "fc5d989fe2db634312af29ff222ce121b080e041012f9a460257bbf41cd6cb7d",
   "private_ip_included": false,
   "schema": "scientia_tdc_sota_reproduction_receipt_v1",
   "source_result_sha256": {
+    "results/tdc_all22_strong_base_overlays_v2/ames.json": "66b14d3ea2eab131eb0981234239a976b512cce97222a0bbf760e11e58a8a870",
+    "results/tdc_all22_strong_base_overlays_v2/cyp2c9_substrate.json": "ff7889d0d2774304c547807253c4ed99ac2ac0b8faa38ec05e60fdfe4df64d16",
+    "results/tdc_all22_strong_base_overlays_v2/cyp3a4_substrate.json": "651a3925fc5056c8d35210dfa7aec5daea19538d5af8faf820f28adf1d571c62",
     "results/tdc_all22_strong_base_overlays_v2/half_life_obach.json": "4d3cfe04baa4f6a4d0263698deb6c6284a8e2566f3d9c77c14f2946da2084222",
-    "results/tdc_overlay_terminal_updates_2026-09-05/cyp2c9_substrate.json": "ff7889d0d2774304c547807253c4ed99ac2ac0b8faa38ec05e60fdfe4df64d16",
-    "results/tdc_overlay_terminal_updates_2026-09-05/cyp3a4_substrate.json": "651a3925fc5056c8d35210dfa7aec5daea19538d5af8faf820f28adf1d571c62",
-    "results/tdc_strong_base_kg_overlays_v1/ames.json": "229abc7111b2003b7ac48d3e343b1e1736315c7655bdcb1896fb056720d9ff46",
-    "results/tdc_strong_base_kg_overlays_v1/hia_hou.json": "038cfacd7e3a04e24442ad9691b41ef0355562b035878aba2db7bed181cd0c11",
-    "results/tdc_strong_base_kg_overlays_v1/solubility_aqsoldb.json": "cdd7c303763b36c1855233210659e04391c9bb6d2cf9477baa5ddca412a69e6d"
+    "results/tdc_all22_strong_base_overlays_v2/hia_hou.json": "1d857b96a011da123c081d674cda59197dc2a192b9f49de7c9e8173f5e9b4452",
+    "results/tdc_all22_strong_base_overlays_v2/pgp_broccatelli.json": "3c6c7970287f58cce9b4a34fe763623124af48b201f3df004566f96548d17426",
+    "results/tdc_all22_strong_base_overlays_v2/solubility_aqsoldb.json": "f6dc36688e562cd3dff4c68281aafeabfc0961cd49f10c4acd703f7e5bbbb45b"
   }
 }

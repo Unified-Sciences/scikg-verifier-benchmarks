@@ -6,6 +6,7 @@
     "cyp3a4_substrate",
     "half_life_obach",
     "hia_hou",
+    "pgp_broccatelli",
     "solubility_aqsoldb"
   ],
   "metric_reproduction": "python reproduce_metrics.py",

@@ -54,14 +54,13 @@ predictions, not training-seed variation.
 
 ## Other materials results
 
-The older globally out-of-fold training inputs for formation energy, MP band
-gap, perovskites and glass have not yet received the same regeneration.
-The two elastic-modulus results instead have a completed replacement method
-that fits source-context transfer on outer-training measurements, calibrates
-on separate source groups, and never uses base predictions during fitting
-or calibration. Their new bundles are pending. See `EVALUATION_STATUS.json`;
-the completed MODNet dielectric evaluation does not change another task's
-status. The TDC contract below is a separate evaluation.
+The strict pair-excluded regeneration is complete for formation energy, MP band
+gap, perovskites and glass as well as dielectric. The two elastic-modulus
+results use a separate completed replacement method that fits source-context
+transfer on outer-training measurements, calibrates on separate source groups,
+and never uses base predictions during fitting or calibration. The eight-task
+prediction bundle records every final fold. See `EVALUATION_STATUS.json`; the
+TDC contract below is a separate evaluation.
 
 ## Method summary
 
@@ -88,9 +87,9 @@ five-seed test evaluation.
 - metric: ROC-AUC
 - official seeds: 1, 2, 3, 4, 5
 - official held-out rows: 245 per seed
-- result: 0.9432418022 +/- 0.0018795697 ROC-AUC
-- per-seed values: 0.9417488670, 0.9427486004, 0.9450813117,
-  0.9412823247, 0.9453479072
+- complete audit: 22 endpoints, five official seeds each, 110 evaluations
+- latest P-glycoprotein result: 0.9450013330 ROC-AUC
+- complete-system numerical leads: seven endpoints
 
 Every final test prediction is included with a script that recomputes the
 metric against the official TDC data. A versioned HTTPS service reproduces the
